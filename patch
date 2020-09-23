@@ -29,23 +29,24 @@
 +     let to_upper = String.map f:Char.uppercase_ascii
    ]} *)
  
- external length : string -> int = "%string_length"
-    using the US-ASCII character set.
-    @since 4.03.0 (4.05.0 in StringLabels) *)
+ (** {1:strings Strings} *)
+ (** [compare s0 s1] sorts [s0] and [s1] in lexicographical order. [compare]
+     behaves like {!Stdlib.compare} on strings but may be more efficient. *)
  
 -val starts_with : prefix:string -> string -> bool
--(** [starts_with ~prefix s] tests if [s] starts with [prefix]
+-(** [starts_with ~prefix s] is [true] iff [s] starts with [prefix].
 +val starts_with : string -> string -> bool
-+(** [starts_with prefix s] tests if [s] starts with [prefix]
++(** [starts_with prefix s] is [true] iff [s] starts with [prefix].
+ 
      @since 4.12.0 *)
  
 -val ends_with : suffix:string -> string -> bool
--(** [ends_with ~suffix s] tests if [s] ends with [suffix]
+-(** [ends_with ~suffix s] is [true] iff [s] ends with [suffix].
 +val ends_with : string -> string -> bool
-+(** [ends_with suffix s] tests if [s] ends with [suffix]
++(** [ends_with suffix s] is [true] iff [s] ends with [suffix].
+ 
      @since 4.12.0 *)
  
- val split_on_char: char -> string -> string list
     [link(2)] function is used whose behaviour is OS-dependent, but more widely
     available.
  
