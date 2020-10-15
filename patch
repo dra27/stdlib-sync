@@ -1,35 +1,3 @@
-    {[
-       open StdLabels
- 
--      let everything = Array.create_matrix ~dimx:42 ~dimy:42 42
-+      let everything = Array.create_matrix dimx:42 dimy:42 42
-    ]} *)
- 
- type 'a t = 'a array
-    {[
-       open StdLabels
- 
--      let first = Bytes.sub ~pos:0 ~len:1
-+      let first = Bytes.sub pos:0 len:1
-    ]}
- 
-    @since 4.02.0
-    {[
-       open StdLabels
- 
--      let seq len = List.init ~f:(function i -> i) ~len
-+      let seq len = List.init f:(function i -> i) len
-    ]}
-  *)
- 
-   {[
-      open StdLabels
- 
--     let to_upper = String.map ~f:Char.uppercase_ascii
-+     let to_upper = String.map f:Char.uppercase_ascii
-   ]} *)
- 
- (** {1:strings Strings} *)
  (** [compare s0 s1] sorts [s0] and [s1] in lexicographical order. [compare]
      behaves like {!Stdlib.compare} on strings but may be more efficient. *)
  
