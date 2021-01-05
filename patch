@@ -2,16 +2,16 @@
      behaves like {!Stdlib.compare} on strings but may be more efficient. *)
  
 -val starts_with : prefix:string -> string -> bool
--(** [starts_with ~prefix s] is [true] iff [s] starts with [prefix].
+-(** [starts_with ~prefix s] is [true] if and only if [s] starts with [prefix].
 +val starts_with : string -> string -> bool
-+(** [starts_with prefix s] is [true] iff [s] starts with [prefix].
++(** [starts_with prefix s] is [true] if and only if [s] starts with [prefix].
  
      @since 4.12.0 *)
  
 -val ends_with : suffix:string -> string -> bool
--(** [ends_with ~suffix s] is [true] iff [s] ends with [suffix].
+-(** [ends_with ~suffix s] is [true] if and only if [s] ends with [suffix].
 +val ends_with : string -> string -> bool
-+(** [ends_with suffix s] is [true] iff [s] ends with [suffix].
++(** [ends_with suffix s] is [true] if and only if [s] ends with [suffix].
  
      @since 4.12.0 *)
  

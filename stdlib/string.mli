@@ -111,7 +111,8 @@ val concat : string -> string list -> string
 (** {1:predicates Predicates and comparisons} *)
 
 val equal : t -> t -> bool
-(** [equal s0 s1] is [true] iff [s0] and [s1] are character-wise equal.
+(** [equal s0 s1] is [true] if and only if [s0] and [s1] are character-wise
+    equal.
     @since 4.03.0 (4.05.0 in StringLabels) *)
 
 val compare : t -> t -> int
@@ -119,24 +120,24 @@ val compare : t -> t -> int
     behaves like {!Stdlib.compare} on strings but may be more efficient. *)
 
 val starts_with : prefix:string -> string -> bool
-(** [starts_with ~prefix s] is [true] iff [s] starts with [prefix].
+(** [starts_with ~prefix s] is [true] if and only if [s] starts with [prefix].
 
     @since 4.12.0 *)
 
 val ends_with : suffix:string -> string -> bool
-(** [ends_with ~suffix s] is [true] iff [s] ends with [suffix].
+(** [ends_with ~suffix s] is [true] if and only if [s] ends with [suffix].
 
     @since 4.12.0 *)
 
 val contains_from : string -> int -> char -> bool
-(** [contains_from s start c] is [true] iff [c] appears in [s] after position
-    [start].
+(** [contains_from s start c] is [true] if and only if [c] appears in [s]
+    after position [start].
 
     @raise Invalid_argument if [start] is not a valid position in [s]. *)
 
 val rcontains_from : string -> int -> char -> bool
-(** [rcontains_from s stop c] is [true] iff [c] appears in [s] before position
-    [stop+1].
+(** [rcontains_from s stop c] is [true] if and only if [c] appears in [s]
+    before position [stop+1].
 
     @raise Invalid_argument if [stop < 0] or [stop+1] is not a valid
     position in [s]. *)
