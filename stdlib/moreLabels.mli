@@ -23,9 +23,9 @@
 
    For example:
    {[
-      open MoreLabels
+     open MoreLabels
 
-      Hashtbl.iter ~f:(fun ~key ~data -> g key data) table
+     Hashtbl.iter ~f:(fun ~key ~data -> g key data) table
    ]}
 *)
 
