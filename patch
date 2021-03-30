@@ -42,8 +42,8 @@
 -   @raise ENOSYS On {e Windows} if [~follow:false] is requested. *)
 +   @raise ENOSYS On {e Windows} if [follow:false] is requested. *)
  
- 
- (** {1 File permissions and ownership} *)
+ val realpath : string -> string
+ (** [realpath p] is an absolute pathname for [p] obtained by resolving
     the Unix module that create file descriptors have an optional
     argument [?cloexec:bool] to indicate whether the file descriptor
     should be created in ``close-on-exec'' mode (by writing

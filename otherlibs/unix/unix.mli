@@ -635,6 +635,11 @@ val link : ?follow:bool -> string -> string -> unit
                  unavailable.
    @raise ENOSYS On {e Windows} if [~follow:false] is requested. *)
 
+val realpath : string -> string
+(** [realpath p] is an absolute pathname for [p] obtained by resolving
+    all extra [/] characters, relative path segments and symbolic links.
+
+    @since 4.13.0 *)
 
 (** {1 File permissions and ownership} *)
 
