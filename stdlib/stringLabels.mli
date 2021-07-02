@@ -151,12 +151,12 @@ val compare : t -> t -> int
 val starts_with : prefix:string -> string -> bool
 (** [starts_with ~prefix s] is [true] if and only if [s] starts with [prefix].
 
-    @since 4.12.0 *)
+    @since 4.13.0 *)
 
 val ends_with : suffix:string -> string -> bool
 (** [ends_with ~suffix s] is [true] if and only if [s] ends with [suffix].
 
-    @since 4.12.0 *)
+    @since 4.13.0 *)
 
 val contains_from : string -> int -> char -> bool
 (** [contains_from s start c] is [true] if and only if [c] appears in [s]
