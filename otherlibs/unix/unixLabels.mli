@@ -1434,9 +1434,7 @@ val socketpair : ?cloexec:bool ->
                  file_descr * file_descr
 (** Create a pair of unnamed sockets, connected together.
    See {!set_close_on_exec} for documentation on the [cloexec]
-   optional argument.
-
-   @raise Invalid_argument on Windows *)
+   optional argument. *)
 
 val accept : ?cloexec:bool -> file_descr -> file_descr * sockaddr
 (** Accept connections on the given socket. The returned descriptor
