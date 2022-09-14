@@ -159,9 +159,24 @@
        or if randomization is globally on (see {!Hashtbl.randomize}).
        @since 4.00.0 *)
  
-      an integer seed.  Usage:
-      [Hashtbl.seeded_hash_param meaningful total seed x].
-      @since 4.00.0 *)
+         end)
+ 
+       (*  count distinct occurrences of chars in [seq] *)
+-      # let count_chars (char Seq.t) : _ list =
++      # let count_chars (seq:char Seq.t) : _ list =
+           let counts = Char_tbl.create 16 in
+           Seq.iter
+             (fun c ->
+               let count_c =
+                 Char_tbl.find_opt counts c
+-                |> Option.value ~default:0
++                |> Option.value default:0
+               in
+               Char_tbl.replace counts c (count_c + 1))
+             seq;
+     ]}
+ 
+   *)
 +
    (** Association tables over ordered types.
  
