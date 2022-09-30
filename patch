@@ -195,12 +195,12 @@
    (** Association tables over ordered types.
  
       This module implements applicative association tables, also known as
-          @before 4.03 Physical equality was not ensured. *)
+           @before 4.03 Physical equality was not ensured. *)
  
        val merge:
--           (key -> 'a option -> 'b option -> 'c option) ->
-+           f:(key -> 'a option -> 'b option -> 'c option) ->
-            'a t -> 'b t -> 'c t
+-        (key -> 'a option -> 'b option -> 'c option) ->
++        f:(key -> 'a option -> 'b option -> 'c option) ->
+         'a t -> 'b t -> 'c t
        (** [merge f m1 m2] computes a map whose keys are a subset of the keys of
            [m1] and of [m2]. The presence of each such binding, and the
      end
