@@ -62,14 +62,6 @@
     the use of the [O_CLOEXEC] flag: on all platforms it is guaranteed
     that a concurrently-executing Caml thread cannot leak the descriptor
     by starting a new process.  On Linux, this guarantee extends to
-   string -> string array -> file_descr -> file_descr ->
-     file_descr -> int
- (** [create_process prog args stdin stdout stderr]
--   creates a new process that executes the program
-+   forks a new process that executes the program
-    in file [prog], with arguments [args]. The pid of the new
-    process is returned immediately; the new process executes
-    concurrently with the current process.
  
  val symlink : ?to_dir:bool -> string -> string -> unit
  (** [symlink ?to_dir src dst] creates the file [dst] as a symbolic link
