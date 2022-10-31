@@ -1,5 +1,5 @@
  (** The equality function for byte sequences.
-     @since 4.03.0 (4.05.0 in BytesLabels) *)
+     @since 4.03 (4.05 in BytesLabels) *)
  
 -val starts_with : prefix:bytes -> bytes -> bool
 -(** [starts_with ~prefix s] is [true] if and only if [s] starts with
@@ -7,14 +7,14 @@
 +(** [starts_with prefix s] is [true] if and only if [s] starts with
      [prefix].
  
-     @since 4.13.0 *)
+     @since 4.13 *)
  
 -val ends_with : suffix:bytes -> bytes -> bool
 -(** [ends_with ~suffix s] is [true] if and only if [s] ends with [suffix].
 +val ends_with : bytes -> bytes -> bool
 +(** [ends_with suffix s] is [true] if and only if [s] ends with [suffix].
  
-     @since 4.13.0 *)
+     @since 4.13 *)
  
  (** [compare s0 s1] sorts [s0] and [s1] in lexicographical order. [compare]
      behaves like {!Stdlib.compare} on strings but may be more efficient. *)
@@ -24,14 +24,14 @@
 +val starts_with : string -> string -> bool
 +(** [starts_with prefix s] is [true] if and only if [s] starts with [prefix].
  
-     @since 4.13.0 *)
+     @since 4.13 *)
  
 -val ends_with : suffix:string -> string -> bool
 -(** [ends_with ~suffix s] is [true] if and only if [s] ends with [suffix].
 +val ends_with : string -> string -> bool
 +(** [ends_with suffix s] is [true] if and only if [s] ends with [suffix].
  
-     @since 4.13.0 *)
+     @since 4.13 *)
  
     [link(2)] function is used whose behaviour is OS-dependent, but more widely
     available.
@@ -114,8 +114,8 @@
       either programmatically by calling {!randomize} or by
       setting the [R] flag in the [OCAMLRUNPARAM] environment variable.
  
--     @before 4.00.0 the [~random] parameter was not present and all
-+     @before 4.00.0 the [random] parameter was not present and all
+-     @before 4.00 the [~random] parameter was not present and all
++     @before 4.00 the [random] parameter was not present and all
       hash tables were created in non-randomized mode. *)
  
    val clear : ('a, 'b) t -> unit
@@ -133,11 +133,11 @@
 -      created using [Hashtbl.create ~random:false].
 +      created using [Hashtbl.create random:false].
  
-       @since 4.00.0 *)
+       @since 4.00 *)
  
-       @since 4.12.0 *)
+       @since 4.12 *)
  
-   (** @since 4.00.0 *)
+   (** @since 4.00 *)
 -  type statistics = {
 +  type statistics = Hashtbl.statistics = {
      num_bindings: int;
@@ -154,7 +154,7 @@
        The functor [Hashtbl.Make] returns a structure containing
        a type [key] of keys and a type ['a t] of hash tables
    (** The output signature of the functor {!MakeSeeded}.
-       @since 4.00.0 *)
+       @since 4.00 *)
  
 -  module MakeSeeded (H : SeededHashedType) : SeededS with type key = H.t
 +    module MakeSeeded (H : SeededHashedType) : SeededS
@@ -171,7 +171,7 @@
 +      result structure supports the [random] optional parameter
 +      and returns randomized hash tables if [random:true] is passed
        or if randomization is globally on (see {!Hashtbl.randomize}).
-       @since 4.00.0 *)
+       @since 4.00 *)
  
          end)
  
